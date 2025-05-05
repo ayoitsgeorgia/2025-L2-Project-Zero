@@ -1,14 +1,16 @@
-number = 5
-print(number * 3)
+# list exploration / experiment
 
-# here is a string that has been multiplied by 3
-# (note the speech marks are text colour)
+fruit_list = ['apple', 'banana', 'cherry', 'dragon fruit']
 
-num_string = "5"
-print(num_string * 3)
+for item in fruit_list:
 
-# an example showing what the len(foo) method does
-example_text = "hello world"
-text_length = len(example_text)
+    print()
 
-print(f"'{example_text}' is {text_length} characters long")
+    # print the whole word...
+    print("Fruit Name: ", item)
+
+    # print the first letter...
+    print("First letter", item[0])
+
+    # challenge - print the first TWO letters
+    print(f"First two letters {item[:2]}")
