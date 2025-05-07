@@ -25,7 +25,7 @@ yes_no_list = ['yes', 'no']
 payment_list = ['cash', 'credit']
 
 like_coffee = string_check("Do you like coffee? ",
-                            yes_no_list, 1)
+                           yes_no_list, 1)
 
 print(f"You chose {like_coffee}")
 pay_method = string_check("Payment method: ", payment_list, 2)
