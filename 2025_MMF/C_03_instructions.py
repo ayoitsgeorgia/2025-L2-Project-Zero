@@ -39,7 +39,7 @@ For each ticket holder enter ...
 The program will record the ticket sale and calculate the
 ticket cost (and the profit).
 
-Once you will have either solf all of the tickets or entered the
+Once you will have either sold all of the tickets or entered the
 exit code ('xxx'), the program will display the ticket
 sales information and write the data in a text file.
 
