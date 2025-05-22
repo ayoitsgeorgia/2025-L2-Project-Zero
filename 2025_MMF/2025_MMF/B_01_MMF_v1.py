@@ -1,5 +1,5 @@
 import pandas
-
+import random
 
 # Function go here
 def make_statement(statement, decoration):
@@ -121,7 +121,7 @@ make_statement("Mini-Movie Fundraiser Program", "🍿")
 # ask users if they want to see the instructions
 # display them if necessary
 print()
-want_instructions = string_check("Do you want to see the instructions?")
+want_instructions = string_check("Do you want to see the instructions? ")
 
 if want_instructions == "yes":
     instructions()
@@ -203,6 +203,22 @@ print()
 print(f"Total Paid: ${total_paid:.2f}")
 print(f"Total Profit: ${total_profit:.2f}")
 
+# choose random winner...
+winner = random.choice(all_names)
+
+# find index of winner (ie: position in list)
+winner_index = all_names.index(winner)
+print("winner", winner, "list position", winner_index)
+
+# retrieve ticket price and surcharge
+winner_ticket_price = all_ticket_costs[winner_index]
+winner_surcharge = all_surcharges[winner_index]
+
+# find total won
+total_won = mini_movie_frame.at[winner_index, 'Total']
+
+# winner announcement
+print(f"The lucky winner is {winner}. Their ticket worth {total_won} is free!")
 
 if tickets_sold == MAX_TICKETS:
     print(f"You have sold all the tickets (ie: {MAX_TICKETS} tickets")

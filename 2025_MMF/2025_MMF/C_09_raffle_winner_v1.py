@@ -1,4 +1,5 @@
 import pandas
+import random
 
 # lists to hold ticket details
 all_names = ["A", "B", "C", "D", "E"]
@@ -22,7 +23,22 @@ mini_movie_frame['Profit'] = mini_movie_frame['Ticket Price'] - 5
 total_paid = mini_movie_frame['Total'].sum()
 total_profit = mini_movie_frame['Profit'].sum()
 
-print(mini_movie_frame)
-print()
-print(f"Total Paid: ${total_paid:.2f}")
-print(f"Total Profit: ${total_profit:.2f}")
+# print(mini_movie_frame)
+print(mini_movie_frame.to_string(index=False))
+
+# choose random winner...
+winner = random.choice(all_names)
+
+# find index of winner (ie: position in list)
+winner_index = all_names.index(winner)
+print("winner", winner, "list position", winner_index)
+
+# retrieve ticket price and surcharge
+winner_ticket_price = all_ticket_costs[winner_index]
+winner_surcharge = all_surcharges[winner_index]
+
+# find total won
+total_won = mini_movie_frame.at[winner_index, 'Total']
+
+# winner announcement
+print(f"The lucky winner is {winner}. Their ticket worth ${total_won:.2f} is free!")
